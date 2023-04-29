@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+        }
+
+        main {
+            width: 750px;
+            height: 380px;
+            border: 1px solid red;
+        }
+
+        section li {
+            margin: 10px;
+        }
+
+        .menu {
+            width: 500px;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 0px;
+            margin-bottom: 20px;
+            line-height: 50px;
+            list-style-type: none;
+            background-color: lightgreen;
+            position: relative;
+            top: -25px;
+        }
+
+        .menu:hover {
+            top: 0px;
+        }
+        
+        .menu > li:hover {
+            color: red;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[id="radio1"]:checked ~ .tab01{
+            display: block;
+        }
+
+        input[id="radio2"]:checked ~ .tab02{
+            display: block;
+        }
+
+        input[id="radio3"]:checked ~ .tab03{
+            display: block;
+        }
+
+        .tabbox {
+            display: none;
+            width: 600px;
+            height: 300px;
+            background-color: bisque;
+        }
+
+        .tabbox > h3 {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        table {
+            background-color: lightgray;
+            border-collapse: collapse;
+        }
+
+        tr {
+            border-bottom: 3px solid blue;
+        }
+
+        tr:first-child > td {
+            text-align: center;
+        }
+
+        td {
+            text-align: center;
+            padding-left: 5px;
+            padding-right: 60px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        span {
+            display: none;
+        }
+
+        #quiz > li:hover > span {
+            display: inline-block;
+            padding-left: 10px;    
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li><label for="radio1">공지사항</label></li>
+                <li><label for="radio2">월별행사</label></li>
+                <li><label for="radio3">잠깐 퀴즈</label></li>
+            </ul>
+        </nav>
+        <section>
+            <input type="radio" name="tabmenu" id="radio1">
+            <input type="radio" name="tabmenu" id="radio2">
+            <input type="radio" name="tabmenu" id="radio3">
+
+            <div class="tabbox tab02">
+                <h3>월별행사</h3>
+                <table>
+                    <tr>
+                        <td>월</td>
+                        <td>제목</td>
+                        <td>비고</td>
+                    </tr>
+                    <tr>
+                        <td>3월</td>
+                        <td>1학기 개강</td>
+                        <td>동아리 회원 모집</td>
+                    </tr>
+                    <tr>
+                        <td>4월</td>
+                        <td>중간고사</td>
+                        <td>시험시간공지</td>
+                    </tr>
+                    <tr>
+                        <td>5월</td>
+                        <td>비봉축전</td>
+                        <td>개교기념일</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tabbox tab01">
+                <h3>공지사항</h3>
+                <ol id="gongji">
+                    <li>창문을 닫아 주세요</li>
+                    <li>냉난방 전원 끄기</li>
+                    <li>음료수는 반입 불가 입니다</li>
+                </ol>
+            </div>
+            <div class="tabbox tab03">
+                <h3>잠깐퀴즈</h3>
+                <ul id="quiz">
+                    <li>HTML이란?<span>(문서구조)</span></li>
+                    <li>CSS란 무엇인가<span>(문서 스타일)</span></li>
+                    <li>JavaScript란 무엇인가? <span>(문서동적효과)</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

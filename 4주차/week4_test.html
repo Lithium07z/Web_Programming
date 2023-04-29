@@ -1,0 +1,303 @@
+<!--
+(3) 해당 질문에 O, X를 하세요
+
+① style 태그는 한번만 작성할 수 있다 ( X )
+② inline 스타일은 전체 웹 페이지에 적용된다 ( X ) 
+③ 외부 스타일 시트에는 html 태그 내용은 존재할 수 없다 ( O )
+④ 태그 선택자는 #으로 시작한다 ( X )
+⑤ 클래스 속성은 중복할 수 없다 ( X )
+-->
+
+<!-- 
+(4) HTML 문서에 CSS3 스타일 시트 만드는 방법 3 가지를 예와 함께 제시하세요 
+
+1) Embedding style(1) : 
+<style>
+        body {
+            background-color: linen;
+            color:blueviolet;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+</style>
+
+2) Inline style(2) : 
+<p style = "color: blue; font-size: 30px">속성</p>
+
+3) Link style(3) :
+------------------------ html ------------------------
+<style> 
+        @import "test.css";
+</style>
+------------------------ css  ------------------------
+td {
+    color: magenta;
+}
+
+-->
+
+<!--
+(5) CSS3 적용 규칙을 설명하세요
+
+css3 규칙
+• 스타일 합치기(cascading)와 오버라이딩(overriding)
+• 태그에 적용되는 모든 스타일이 합쳐지고, 동일한 스타일은 순위가 높은 스타일이 우선 적용되는 규칙
+1. Inline style
+2. Embedding style
+3. Link style
+4. Browser dafault
+-->
+
+<!--
+(6) 다음 HTML 구조에서 음영으로 표시된 요소를 선택하여 글자색을 green 색상으로 표시하는 스타일 시트를 제시하세요. 
+    단, 음영으로 표시된 요소를 선택할 수 선택자를 3 개 제시하세요.
+
+<body>
+    <table border="1">
+        <tr class="head">
+            <td class ="head-item"><strong>Lorem</strong></td>
+            <td class ="head-item"><strong>Lpsum</strong></td>
+        </tr>
+        <tr>
+            <td>Dolor</td>
+            <td>Amet</td>
+        </tr>
+    </table>
+</body>
+
+----------------------------------------------------------------------------------------------------------   
+1)
+<style>
+    .head {
+        color: green
+    }
+</style>
+
+2)
+<style>
+    .head-item {
+        color: green
+    }
+</style>
+
+3)
+<style>
+    strong {
+        color: green
+    }
+</style>
+-->
+
+<!--
+(7) 제시된 스타일 시트를 별도의 파일로 작성한 후 웹 페이지로 불러오기를 하세요
+    
+<head>
+    <title>CSS3 Selector Basic Page</title>
+    <style>
+        li.select {
+            color :chocolate;
+        }
+        h1.select{
+            color :darkgoldenrod;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="select">클래스 속성 중복</h1>
+    <ul>
+        <li class="select">사과</li>
+        <li>바나나</li>
+        <li>오렌지</li>
+        <li>감</li>
+    </ul>
+</body>
+
+-------------------------------------------------------------------------------------
+[ html ]
+<head>
+    <title>CSS3 Selector Basic Page</title>
+    <style>
+        @import "test.css";
+    </style>
+</head>
+<body>
+    <h1 class="select">클래스 속성 중복</h1>
+    <ul>
+        <li class="select">사과</li>
+        <li>바나나</li>
+        <li>오렌지</li>
+        <li>감</li>
+    </ul>
+</body>
+
+[ css ]
+li.select {
+    color :chocolate;
+}
+h1.select{
+    color :darkgoldenrod;
+}
+-->
+
+<!--
+(8) 해당 질문에 O, X를 하세요
+① 자손은 후손보다 넓은 개념입니다. ( X )
+② div > h1, h2 는 “div 태그 아래”의 “h1 태그와 h2 태그”를 선택하는 선택자입니다. ( O )
+③ CSS 도 HTML와 같은 형태로 주석을 사용합니다. ( X ) 
+④ 2rem 은 상속된 요소 사이즈의 2 배를 나타내는 크기 단위입니다. ( O )
+⑤ 색상 단위에서 투명도를 지정할 때는 argb() 등을 사용합니다. ( X )
+
+-->
+
+<!--
+(9) viewport 단위에 대하여 설명하세요
+
+◦ viewport - 웹 페이지의 가시 영역
+◦ viewport - 비율에 따라 크기 결정
+◦ 예 : viewport 너비가 1000px, 높이가 600px인 경우,
+    • 1vw : viewport 너비 1000px의 1%인 10px    (vw = viewport 너비의 1/100)
+    • 1vh : viewport 높이 600px의 1%인 6px      (vh = viewport 높이의 1/100)
+    • vmin : viewport 높이 600px의 1%인 6px     (vmin = viewport 너비 또는 높이 중 작은 쪽의 1/100)
+    • vmax : viewport 너비 1000px의 1%인 10px   (vmax = viewport 너비 또는 높이 중 큰 쪽의 1/100)
+-->
+
+<!--
+(10) 다음 코드에서 선택자가 어떤 태그를 선택하는지 제시하세요.
+<body>
+    <header>
+        <hgroup>
+            <h1><a href="#">Header</a></h1>
+        </hgroup>
+        <nav>
+            <div><a href="#">Item</a></div> 
+            <div><a href="#">Item</a></div>
+            <div><a href="#">Item</a></div>
+        </nav>
+    </header>
+</body>
+
+• 선택자 1번: header a (모든 <a>태그가 선택 됨)
+• 선택자 2번: header > * > h1 (아무것도 바뀌지 않음, <a>태그는 자신만의 attribute가 있어서 색상 적용을 받지 않음, <a>태그 말고 일반 텍스트는 적용됨)
+• 선택자 3번: header > * > *:first-child > a (<h1><a href="#">Header</a></h1>, <div><a href="#">Item</a></div> 선택됨)
+• 선택자 4번: header a:first-child (모든 <a>태그의 자식이 선택됨)
+-->
+
+<!--
+(11) 다음 코드의 실행 결과를 예측 하시오.
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 Selector Basic</title>
+        <style>
+            li>a:first-child { 
+                color: red; 
+            }
+            li:nth-child(even) > a { 
+                color: green; 
+            }
+            li:nth-of-type(3){ 
+                background-color: aqua; 
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#">a 태그</a></li>
+            <li><a href="#">a 태그</a></li>
+            <li><a href="#">a 태그</a></li>
+            <li><a href="#">a 태그</a></li>
+            <li><a href="#">a 태그</a></li>
+        </ul>
+    </body>
+</html>
+
+빨강
+초록
+빨강, 배경 아쿠아
+초록
+빨강
+-->
+
+<!--
+(12) 다음 코드의 실행 결과를 예측하시오
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        div.d1 {
+            border: 1px dashed red;
+            width: 400px;
+            padding: 5px;
+        }
+
+        /* 가상 클래스 선택자 */
+        div.d1:hover {
+            border: 2px solid black;
+            background-color: rgb(200, 255, 0);
+        }
+
+        input:checked+span {
+            color: red;
+        }
+
+        span:first-of-type {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Pseudo Class</h2>
+    <p><a href="http://www.w3.org">W3C 방문</a> : 마우스 이벤트에 따른 링크의 변화를 잘 보세요.</p>
+    <div class="d1">
+        <h3>가상 클래스 1 영역</h3>
+        마우스 위치에 따른 박스의 스타일 변화를 보세요.
+    </div>
+    <h3>중간 고사 일정</h3>
+    <label for="mid">확인</label>
+    <input type="checkbox" id="mid">
+    <span>4 월 18~4 월 22 일</span>
+</body>
+
+-->
+
+<!--
+(13) 다음 질문에 O, X 로 답하시오.
+① inline 형식의 태그에는 margin 속성과 padding 속성은 좌우로만 적용됩니다. ( )
+② inline-block 형식의 태그는 margin 속성과 padding 속성이 상하좌우로 적용됩니다. ( )
+③ background-image 속성에는 이미지를 하나만 지정할 수 있습니다. ( )
+④ font-family 속성에 글꼴은 하나만 지정할 수 있습니다. ( )
+⑤ font-weight 속성은 제한없이 사용할 수 있습니다. ( )
+⑥ inline 형식의 태그에는 text-align 속성을 지정해도 의미가 없습니다. ( )    
+-->
+
+
+<!--
+(14) 질문에 답하시오
+1) 배경 이미지를 화면에 고정하기 위해 사용하는 속성과 값이 바르게 짝지어진 것은?
+    ① background-repeat:fixed ② background-attachment:fixed
+    ③ background-attachment:scroll ④ background-repeat:repeat-x
+
+2) 다음 속성 중 글자 색상을 지정하는 속성은?
+    ① font-color ② text-color ③ color ④ background-color
+
+3) 다음 속성 중 박스와 관련한 속성이 아닌 것은?
+    ① border ② margin ③ padding ④ direction
+
+4) 다음 중 배경 이미지로 background.png 를 올바르게 지정한 것은?
+    ① background: url(‘background.png’) ② background: image(‘background.png’)
+    ③ background: png(‘background’) ④ background: background as png
+
+5) 다음 중 table 과 관련 없는 속성은 무엇인가?
+    ① empty-cells ② table-layout
+    ③ list-style-position ④ border-collapse    
+    
+-->

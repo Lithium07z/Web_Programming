@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #thead_and_tfoot {
+            background-color: black;
+            color: white;
+        }
+        #block1 {
+            background-color: lightskyblue;
+            font-style: italic;
+            font-size: 16px;
+            color: blue;
+        }
+        #block2 {
+            background-color: chartreuse;
+            font-style: normal;
+            font-size: 16px;
+            color: green;
+        }
+        #block3 {
+            background-color: gold;
+            font-style: oblique;
+            font-size: 16px;
+            color: yellow;
+        }
+        #block4 {
+            background-color: pink;
+            font-style: inherit;
+            font-size: 16px;
+            color: deeppink;
+        }
+        #block5 {
+            background-color: coral;
+            font-style: initial;
+            font-size: 16px;
+            color: crimson;
+        }
+        #block6 {
+            background-color: maroon;
+            font-style: unset;
+            font-size: 16px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr id = "thead_and_tfoot">
+                <th>종류</th>
+                <th>형태</th>
+                <th>종류</th>
+                <th>형태</th>
+                <th>종류</th>
+                <th>형태</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id = "block1">전체 선택자</td>
+                <td id = "block1">*</td>
+                <td id = "block3" rowspan="8">구조선택자</td>
+                <td id = "block3">선택자:first-child</td>
+                <td id = "block4" rowspan="4">상태선택자</td>
+                <td id = "block4">선택자:chekced</td>
+            </tr>
+            <tr>
+                <td id = "block1">태그 선택자</td>
+                <td id = "block1">태그</td>
+                <td id = "block3">선택자:last-child</td>
+                <td id = "block4">선택자:focus</td>
+            </tr>
+            <tr>
+                <td id = "block1">아이디 선택자</td>
+                <td id = "block1">#아이디</td>
+                <td id = "block3">선택자:nth-child(수열)</td>
+                <td id = "block4">선택자:enabled</td>
+            </tr>
+            <tr>
+                <td id = "block1">클래스 선택자</td>
+                <td id = "block1">클래스</td>
+                <td id = "block3">선택자:nth-last-child(수열)</td>
+                <td id = "block4">선택자:disabled</td>
+            </tr>
+            <tr>
+                <td id = "block1">후손 선택자</td>
+                <td id = "block1">선택자 선택자</td>
+                <td id = "block3">선택자:first-of-type</td>
+                <td id = "block5" rowspan="2">동위 선택자</td>
+                <td id = "block5">선택자+선택자</td>
+            </tr>
+            <tr>
+                <td id = "block1">자손 선택자</td>
+                <td id = "block1">선택자>선택자</td>
+                <td id = "block3">선택자:last-of-type</td>
+                <td id = "block5">선택자 ~ 선택자</td>
+            </tr>
+            <tr>
+                <td id = "block2" rowspan="2">반응 선택자</td>
+                <td id = "block2">선택자:active</td>
+                <td id = "block3">선택자:nth-of-type(수열)</td>
+                <td id = "block6" rowspan="2">링크선택자</td>
+                <td id = "block6">선택자:link</td>
+            </tr>
+            <tr>
+                <td id = "block2">선택자:hover</td>
+                <td id = "block3">선택자:nth-last-of-type(수열)</td>
+                <td id = "block6">선택자:visited</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr id = "thead_and_tfoot">
+                <th colspan="6">CSS 선택자 종류</th> 
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

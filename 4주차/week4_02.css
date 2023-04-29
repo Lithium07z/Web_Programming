@@ -1,0 +1,35 @@
+ol { /* 태그 선택자 */
+    background-color: antiquewhite;
+    color: blue;
+    width: 10vw;
+    font-size: 20px;
+}
+
+.unorder_list { /* 클래스 선택자 */
+    background-color: lightskyblue;
+    width: 60%;
+}
+
+#odd { /* id 선택자 */
+    color: blueviolet
+}
+
+#even { /* id 선택자 */
+    color: green;
+}
+
+#list1 {
+    color: brown;
+}
+
+#list2 {
+    color: orange;
+}
+
+#list3 {
+    color: red;
+}
+
+#list4 {
+    color: gold;
+}

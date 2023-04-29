@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: brown;
+        }
+
+        hr {
+            margin-left: 0;
+            width: 500px;
+            border-style: dashed;
+        }
+
+        .box1 {
+            border-color: brown;
+            border-style: solid;
+            border-width: medium 0 medium 0;
+            background-color: darkorange;
+            width: 400px;
+        }
+
+        div:first-child>strong {
+            background-color: yellow;
+            color: blue;
+        }
+
+        .box1 > div:first-child {
+            padding-bottom: 80px;
+        }
+
+        .box1 > div:nth-child(2) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: aqua;
+        }
+
+        .box1 > div:last-child {
+            padding-top: 160px;
+            color: white;
+        }
+
+        li {
+            display: inline;
+        }
+
+        ul:first-child {
+            color: blue;
+        }
+
+        ul > li:first-child a {
+            color: blue;
+        }
+
+        ul > li:nth-child(2) a {
+            color: red;
+        }
+
+        ul > li:last-child a {
+            color: green;
+        }
+
+        ul > li:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="heading">소프트웨어 융합 대학</h1>
+        <hr>
+    </header>
+    <section>
+        <div class="box1">
+            <div>
+                세부 전공은 <strong>다음</strong>과 같습니다
+            </div>
+            <div>
+                <ul class="list">
+                    <li><a href="#">빅데이터</a></li>
+                    <li><a href="#">스마트IoT</a></li>
+                    <li><a href="#">컨테츠IT</a></li>
+                </ul>
+            </div>
+            <div>
+                자세한 내용은 <strong>게시판</strong>을 이용하세요
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

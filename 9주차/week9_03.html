@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media all {
+            a {
+                color: black;
+                font-size: 25px;
+                text-decoration: none;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            .menu_bar {
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: space-between;
+                background-color: aquamarine;
+            }
+
+            .menu_item {
+                display: flex; 
+                padding-left: 0;  
+            }
+
+            .menu_item li {
+                list-style-type: none;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .menu_item li:hover {
+                background-color: blue;
+                border-radius: 10px;
+            }
+
+            .menu_left {
+                position: absolute;
+                left: 10px;
+            }
+
+            .menu_right {
+                position: absolute;
+                right: 10px;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .menu_bar {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu_bar {
+                /* 컨테이너 main-axis 를 column 으로 설정한 후 아이템을 cross start 기준으로 정렬 */
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu_item {
+                /* 컨테이너 main-axis 를 column 으로 설정한 후 아이템을 cross-axis의 중앙에 정렬 */
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .menu_item li {
+                width: 98%;
+            }
+
+            .menu_left {
+                position:static;
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+
+            .menu_right {
+                padding-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu_bar">
+        <div class="menu_left">
+            <a href="">Hallym</a>
+        </div>
+        <ul class="menu_item">
+            <li>대학소개</li>
+            <li>전공</li>
+            <li>대학생활</li>
+            <li>학사지원</li>
+        </ul>
+        <div class="menu_right">
+            <a href="">smartlead</a>
+        </div>
+    </nav>
+</body>
+
+</html>

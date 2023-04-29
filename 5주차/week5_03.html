@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            margin: auto;
+            width: 500px;
+            height: 300px;
+            background-color: antiquewhite;
+        }
+
+        h2 {
+            text-align: center;
+            color: brown;
+            text-decoration: underline;
+        }
+
+        span,
+        input {
+            display: none;
+        }
+
+        input[type="radio"]:checked+span {
+            display: inline-block;
+            color: red;
+            padding-left: 10px;
+        }
+
+        ul>li {
+            margin-bottom: 20px;
+        }
+
+        li>ol {
+            padding-left: 20px;
+            color: lightgray;
+        }
+
+        label {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>질문에 답하세요</h2>
+        <ul>
+            <li>웹 표준이 아닌것은?
+                <ol>
+                    <li><label for="sol1">html</label><input type="radio" name="ans" id="sol1"><span>(incorrect)</span>
+                    </li>
+                    <li><label for="sol2">JavaScript</label><input type="radio" name="ans"
+                            id="sol2"><span>(incorrect)</span></li>
+                    <li><label for="sol3">CSS3</label><input type="radio" name="ans" id="sol3"><span>(incorrect)</span>
+                    </li>
+                    <li><label for="sol4">TypeScript</label><input type="radio" name="ans"
+                            id="sol4"><span>(correct)</span></li>
+                </ol>
+            </li>
+            <li> 가상 클래스 선택자가 아닌것은?
+                <ol>
+                    <li><label for="sol5">hover</label><input type="radio" name="ans1"
+                            id="sol5"><span>(incorrect)</span></li>
+                    <li><label for="sol6">after</label><input type="radio" name="ans1" id="sol6"><span>(correct)</span>
+                    </li>
+                    <li><label for="sol7">visited</label><input type="radio" name="ans1"
+                            id="sol7"><span>(incorrect)</span></li>
+                    <li><label for="sol8">checked</label><input type="radio" name="ans1"
+                            id="sol8"><span>(incorrect)</span></li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
+<!-- 박스모델 사용, 마진 사용-->

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #title {
+            width: 800px;
+            height: 50px;
+            background-color: lightskyblue;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+        }
+
+        #title>ul>li>:first-child {
+            line-height: 50px;
+            color: blue;
+        }
+
+        #title>ul>li>:first-child:hover {
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            text-decoration: underline;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        #title>ul>li>:first-child:hover~#subtitle {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #subtitle {
+            width:fit-content;
+            color: gray;
+            display: none;
+            text-align: center;
+            background-color: lightgray;
+        }
+
+        #subtitle>div {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">
+        <ul>
+            <li>
+                <div>대학소개</div>
+                <div id="subtitle">
+                    <div>교육이념</div>
+                    <div>대학상징</div>
+                    <div>캠퍼스안내</div>
+                </div>
+            </li>
+            <li>
+                <div>전공</div>
+                <div id="subtitle">
+                    <div>소프트웨어 융합 대학</div>
+                    <div>나노 융합 스쿨</div>
+                    <div>미래 융합 스쿨</div>
+                </div>
+            </li>
+            <li>
+                <div>대학생활</div>
+                <div id="subtitle">
+                    <div>프로그램</div>
+                    <div>장학제도</div>
+                    <div>캘린더</div>
+                </div>
+            </li>
+            <li>
+                <div>학사지원</div>
+                <div id="subtitle">
+                    <div>휴학</div>
+                    <div>복학</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

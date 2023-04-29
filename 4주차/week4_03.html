@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style> 
+        .table {
+            background-color: antiquewhite;
+        }
+        #light {
+            background-color: lightskyblue;
+        }
+        #dark {
+            background-color:cornflowerblue;
+        }
+        #topic {
+            background-color: blueviolet;
+            color: white;
+        }
+        tbody > tr > td > input[id = "id"] {
+            background-color: yellow;
+        }
+        tbody > tr > td > input[id = "password"] {
+            background-color: yellow;
+        }
+        tbody > tr > td > input[id = "email"] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <table class = "table" border="1">
+            <thead>
+                <th colspan="2">동아리 회원 가입</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id = "topic"><label for="id">아이디</label></th>
+                    <td id = "light"><input type="text" id="id" size="20" required></td>
+                </tr>
+                <tr>
+                    <th id = "topic"><label for="password">패스워드</label></th>
+                    <td id = "dark"><input type="password" id="password" size="20" required></td>
+                </tr>
+                <tr>
+                    <th id = "topic"><label for="email">메일 주소</label></th>
+                    <td id = "light"><input type="email" id="email" size="20"></td>
+                </tr>
+                <tr>
+                    <th id = "topic">학년</th>
+                    <td id = "dark">
+                        <input type="radio" name="grade" id="1st">
+                        <label for="1st">1학년</label>
+                        <input type="radio" name="grade" id="2nd">
+                        <label for="2nd">2학년</label>
+                        <input type="radio" name="grade" id="3rd">
+                        <label for="3rd">3학년</label>
+                        <input type="radio" name="grade" id="4th">
+                        <label for="4th">4학년</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th id = "topic">전공</th>
+                    <td id = "light">
+                        <select>
+                            <optgroup label="전공">
+                                <option value="콘텐츠IT" selected>콘텐츠IT</option>
+                                <option value="스마트IoT" selected>스마트IoT</option>
+                                <option value="빅데이터" selected>빅데이터</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th id = "topic">관심분야</th>
+                    <td id = "dark">
+                        <input type="checkbox" value="1">프론트엔드
+                        <input type="checkbox" value="2">백엔드
+                        <input type="checkbox" value="3">풀스택
+                        <input type="checkbox" value="4">프레임워크
+                    </td>
+                </tr>
+                <tr>
+                    <th id = "topic">자기소개서</th>
+                    <td id = "light"><input type="file" name="file" value="file"></td>
+                </tr>
+                <tr>
+                    <th id = "topic">생년월일</th>
+                    <td id = "dark"><input type="date"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <th colspan="2">
+                    <input type="submit" value="가입">
+                    <input type="reset" value="재작성">
+                </th>
+            </tfoot>
+        </table>
+    </form>
+</body>
+
+</html>
