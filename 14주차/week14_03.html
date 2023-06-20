@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(function () {
+            $('button').on('click', function() {
+                $('a').text(`${$('input:checked').val()}`);
+                $('a').attr({
+                    href : function() {
+                        return `http://www.` + `${$('input:checked').val()}`;
+                    }
+                });
+                $('img').attr({
+                    src : function() { 
+                        return $('option:checked').val();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="box1">
+        <a href="#">클릭하세요</a>
+        <br>
+        <img src="image_01.png" alt="">
+    </div>
+    <hr>
+    <div class="box2">
+        <h2>이미지</h2>
+        <select id="imglist">
+            <option value="image_01.png">Image1</option>
+            <option value="image_02.png">Image2</option>
+            <option value="image_03.png">Image3</option>
+        </select>
+        <h2>URL</h2>
+        <input type="radio" name="url" value="naver.com">naver<br>
+        <input type="radio" name="url" value="daum.com">daum<br>
+        <input type="radio" name="url" value="hallym.ac.kr">hallym
+    </div>
+    <hr>
+    <div class="choice">
+        <button>apply</button>
+    </div>
+</body>
+
+</html>

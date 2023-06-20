@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h3> 항목 삭제 & 추가</h3>
+        <form>
+            name : <input type="text" id="name" required><br>
+        </form>
+    </div>
+    <hr>
+    <div id="list">
+        <p>사과</p>
+        <p>레몬</p>
+        <p>자두</p>
+    </div>
+    <input type="button" value="add" id="add">
+    <input type="button" value="delete" id="del">
+    <script>
+        const $add = document.querySelector("#add");
+        const $del = document.querySelector("#del");
+
+        $add.onclick = function() {
+            const name = document.querySelector("#name");
+            const newElem = document.createElement('p');
+            const newText = document.createTextNode(name.value);
+            newElem.appendChild(newText);
+
+            const container = document.getElementById('list');
+            container.appendChild(newElem);
+        
+            name.value = "";
+        }
+
+        $del.onclick = function() {
+            const name = document.querySelector("#name");
+            const elems = document.querySelectorAll("p");
+            const container = document.getElementById('list');
+
+            for (let i = 0; i < elems.length; i++) {
+                if (elems[i].innerText == name.value) {
+                    name.value = "";
+                    container.removeChild(elems[i]);
+                    return;
+                }
+            }
+
+            alert(`${name.value}는 리스트에 없습니다.`);
+        }
+    </script>
+</body>
+
+</html>

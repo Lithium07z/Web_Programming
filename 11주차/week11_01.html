@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function spread(...arr) {
+            console.log(`length : ${arr.length}`);
+            for (let index in arr) {
+                console.log(`index = ${index}, value = ${arr[index]}`);
+            }
+        }
+
+        //1)배열 arr 요소를 개별적인 값으로 생성하여 함수 spread() 매개변수로 전달
+        const arr = ['a', 'b', 'c', 'd'];
+        spread(...arr);
+
+        //2) 배열 arr2에 배열arr3 원소를 추가한 후 정렬하고 콘솔로 출력 
+        const arr2 = [11, 24, 52, 31];
+        const arr3 = [45, 78];
+
+        console.log(`--- sort before ---`);
+
+        arr2.push(...arr3);
+        arr2.forEach((value, index) => {
+            console.log(`${index + 1} : ${value}`);
+        });
+
+        console.log(`--- sort after ---`);
+
+        arr2.sort();
+
+        arr2.forEach((value, index) => {
+            console.log(`${index + 1} : ${value}`);
+        });
+
+        //3) 객체에 obj에 대하여 프로퍼티 키를 기준으로 디스트럭처링 할당 후 콘솔로 출력 
+        const obj = { firstName: 'Ungmo', lastName: 'Lee' };
+        const { firstName, lastName } = obj;
+        console.log(`firstName : ${firstName}, lastName : ${lastName}`);
+    </script>
+</body>
+
+</html>

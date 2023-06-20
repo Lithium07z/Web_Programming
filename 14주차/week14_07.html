@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        const init = function ($item) {
+            $item.css({
+                width: '100px',
+                height: '100px',
+                margin: '2px 2px',
+                display: 'inline-block',
+                lineHeight: '100px',
+                textAlign: 'center'
+            });
+        }
+
+        function swtichingBox() {
+            $('div').last().prependTo($('body'))
+        }
+
+        $(function () {
+            init($('div'));
+            $('div:nth-child(1)').css('background', 'red');
+            $('div:nth-child(2)').css('background', 'orange');
+            $('div:nth-child(3)').css('background', 'blue');
+            $('div:nth-child(4)').css('background', 'yellow');
+            $('div:nth-child(5)').css('background', 'green');
+
+            setInterval("swtichingBox()", 2000);
+        });
+    </script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+
+</html>

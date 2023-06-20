@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cities</h1>
+    <ul>
+        <li id="one" class="red">hallym</li>
+        <li id="two" class="red">bigdata</li>
+        <li id="three" class="red">smartIoT</li>
+        <li id="four" class="red">contentIoT</li>
+    </ul>
+    <script>
+        window.onload = function () {
+            const elems1 = document.getElementsByClassName('red');
+            for (let i = 0; i < elems1.length; i++) {
+                elems1[i].className = 'blue';
+            }
+
+            const arr = [...elems1];
+            arr.forEach(value => value.className = 'blue');
+
+            document.querySelector('#one').style.color = 'red';
+            document.querySelector('#two').style.color = 'blue';
+            document.querySelector('#three').style.color = 'violet';
+            document.querySelector('#four').style.color = 'green';
+        }   
+    </script>
+</body>
+
+</html>

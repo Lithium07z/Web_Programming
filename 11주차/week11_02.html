@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const insert = function () {
+            let arr = [];
+            while (true) {
+                let stuff = prompt("준비물을 입력하세요.\n더 이상 없으면 '완료'를 입력하세요");
+                if (stuff == "완료" || stuff == null) {
+                    return arr;
+                } else {
+                    arr.push(stuff);
+                }
+            }
+        }
+
+        const write = function (arr) {
+            console.log(`목록확인`);
+            arr.forEach((item) => {
+                console.log(`${item}`);
+            });
+            confirm(`여행 준비물 목록 을 출력합니다\n${arr}`);
+
+            console.log("준비해야 할 목록");
+            search(arr).forEach((item) => {
+                console.log(`${item}`);
+            });
+            confirm(`앞으로 준비해야 할 목록을 출력합니다\n${arr}`);
+        }
+
+        const search = function (arr) {
+            while (true) {
+                let complete = prompt("준비완료 한 물품을 입력하세요\n더 이상 없으면 '완료'를 입력하세요");
+                if (complete == "완료" || complete == null) {
+                    return arr;
+                } else {
+                    let idx = arr.indexOf(complete);
+                    if (idx == -1) {
+                        alert("준비물 목록에 없습니다");
+                    } else {
+                        arr.splice(idx, 1);
+                    }
+                }
+            }
+        }
+
+        write(insert());
+    </script>
+</body>
+
+</html>

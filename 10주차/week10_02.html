@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user1 = prompt("사용자1");
+        let user2 = prompt("사용자2");
+
+        const game = (username) => {
+            let num = Math.floor(Math.random() * 1000000) + 1;
+            let clap = 0;
+            document.write(`${username} 사용자 <br>`);
+            document.write(`생성된 난수 : ${num} <br>`);
+            for (let i = 0; i < num.toString().length; i++) {
+                if (num.toString().charAt(i) == "3" || num.toString().charAt(i) == "6" || num.toString().charAt(i) == "9") {
+                    document.write(`박수짝 ${++clap} <br>`);
+                }
+            }
+            document.write(`박수 개수 : ${clap} <br><br>`);
+            return clap;
+        }
+    
+        let cnt1 = game(user1); 
+        let cnt2 = game(user2);
+        
+        if (cnt1 > cnt2) { 
+            document.write(`${user1} 사용자가 이겼습니다`);
+        } else if (cnt1 < cnt2) {
+            document.write(`${user2} 사용자가 이겼습니다`);
+        } else {
+            document.write(`비겼습니다`);
+        }
+    </script>
+</body>
+</html>
+
+<!-- 화살표 함수 써야 함 -->

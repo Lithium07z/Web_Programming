@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(function () {
+            $('.hallym').each(function(index) {
+                $(this).css('width', '200px');
+                $(this).html(`${this.textContent} 소개`);
+            })
+            $('.hallym').even().css('background', 'grey');
+            $('.hallym').odd().css('background', 'yellow');
+        });
+    </script>
+</head>
+
+<body>
+    <h2>jQuery selector 사용하기</h2>
+    <h4 class="hallym">css3</h4>
+    <h4 class="hallym">html</h4>
+    <h4 class="hallym">JavaScript</h4>
+    <h4 class="hallym">TypeScript</h4>
+    <h4 class="hallym">jQuery</h4>
+</body>
+
+</html>

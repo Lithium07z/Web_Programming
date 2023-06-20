@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p {
+            color: red;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        tr {
+            border-bottom: 1px solid coral;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(function () {
+            $('tr').not(':last').css('color', 'blue');
+            $('td').css('padding-right', '30px');
+            $('tr:last-child>td').css('text-align', 'center');
+
+            $('input[type="button"]').click(function () {
+                const name = $('input[name="name"]').val();
+                const password = $('input[name="password"]').val();
+                const url = $('input[name="url"]').val();
+
+                $('p').text(`name : ${name}, password : ${password}, url : ${url}`);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p><em>Values: </em></p>
+    <form>
+        <table>
+            <tr>
+                <td>name :</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>password :</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>url : </td>
+                <td><input type="text" name="url"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="확인"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

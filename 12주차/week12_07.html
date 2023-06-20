@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="checkbox" name="hobby" value="등산">등산
+        <input type="checkbox" name="hobby" value="걷기">걷기
+        <input type="checkbox" name="hobby" value="요가">요가
+        <input type="checkbox" name="hobby" value="조깅">조깅
+        <input type="checkbox" name="hobby" value="서핑">서핑<br>
+        <input type="button" value="checked">
+    </form>
+    <script>
+        const $checkbox = document.querySelectorAll('input[type="checkbox"]');
+        const $button = document.querySelector('input[type="button"]');
+
+        $button.addEventListener('click', function () {
+            let result = "";
+            $checkbox.forEach(element => {
+                if (element.checked) {
+                    result += element.value + "\n";
+                }
+            });
+
+            alert(`선택결과를 출력합니다.\n${result}`);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:insert()">이곳을 클릭하여 가고 싶은 여행지를 입력하세요</a>
+    <ul>희망하는 장소 입니다</ul>
+    <script> 
+        let ul = document.querySelector("ul");
+
+        function insert() {
+            for (let i = 1; true; i++) {
+                let location = prompt("여행지를 입력하세요. 더 이상 없으면 취소버튼을 클릭하세요");
+                if (location == null) {
+                    break;
+                } else {
+                    if (i % 2 == 1) {
+                        ul.innerHTML += `<li style="list-style-type: none; color: red;">${i}) ${location}</li>`;
+                    } else {
+                        ul.innerHTML += `<li style="list-style-type: none; color: green;">${i}) ${location}</li>`;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

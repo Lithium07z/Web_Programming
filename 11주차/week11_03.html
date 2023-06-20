@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class person {
+            constructor(name, address, tel) {
+                this.name = name;
+                this.address = address;
+                this.tel = tel;
+            }
+        }
+
+        const input = function () {
+            let arr = new Array();
+            while (true) {
+                let data = prompt("이름과 주소, 연락처를 입력하세요.\n단, 각각의 데이터는 공백으로 분리합니다.\n입력완료는 취소버튼을 클릭하세요");
+                if (data == null) {
+                    break;
+                } else {
+                    arr.push(str_split(data));
+                }
+            }
+
+            console.log(`입력을 완료합니다.`);
+            console.log(`입력내용을 출력합니다`);
+            arr.forEach((item, index) => {
+                console.log(`name: ${item.name} address: ${item.address} tel: ${item.tel}`);
+            });
+        }
+
+        const str_split = function (data) {
+            return new person(...data.split(" "));
+        }
+
+        input();
+    </script>
+</body>
+
+</html>

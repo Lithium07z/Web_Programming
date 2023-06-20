@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>구입한 물품 목록</h1>
+    <hr>
+    <div id="list"></div>
+    <script>
+        let arr = [];
+        
+        while (true) {
+            let stuff = prompt("품목과 개수를 입력하세요\n종료는 취소버튼을 클릭하세요");
+            if (stuff == null) {
+                break;
+            } else {
+                arr.push(stuff);
+            }
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+            const newElem = document.createElement('p');
+            const newText = document.createTextNode(`품목 : ${arr[i].split(' ')[0]}, \u00a0\u00a0\u00a0구입개수 : ${arr[i].split(' ')[1]}`);
+            newElem.appendChild(newText);
+
+            const container = document.getElementById('list');
+            container.appendChild(newElem);
+        }
+    </script>
+</body>
+
+</html>

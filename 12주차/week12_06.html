@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="red">문서노드</p>
+    <p class="red">텍스트 노드</p>
+    <p class="red">요소 노드</p>
+    <p class="red">애트리뷰트 노드</p>
+    <p class="red">자식 노드</p>
+    <p class="red">형제 노드</p>
+    <input type="button" id="tagN" value="색상 변경 하기">
+    <script>
+        const $button = document.querySelector('#tagN');
+        const elems = document.getElementsByClassName('red');
+
+        $button.addEventListener('click', function() {
+            let rand = Math.floor(Math.random() * 10) % 6;
+            elems[rand].style.color = 'green';
+        });
+    </script>
+</body>
+
+</html>

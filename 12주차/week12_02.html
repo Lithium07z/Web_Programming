@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h3>참가자 명단</h3>
+        <form>
+            name : <input type="text" id="name" required><br>
+            <input type="button" value="추가" onclick="newRegister()">
+        </form>
+    </div>
+    <hr>
+    <h3>리스트</h3>
+    <div id="list">
+    </div>
+    <script>
+        function newRegister() {
+            const newElem = document.createElement('p');
+            const newText = document.createTextNode(document.getElementById('name').value);
+            newElem.appendChild(newText);
+
+            const container = document.getElementById('list');
+            container.insertBefore(newElem, container.firstChild);
+        }
+    </script>
+</body>
+
+</html>

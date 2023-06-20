@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const users = [
+            { ave: 85, name: 'Lee' },
+            { ave: 59, name: 'Kim' },
+            { ave: 90, name: 'Choi' },
+            { ave: 50, name: 'Park' }
+        ];
+
+        const roots = users.map((item, index, users) => {
+            if (item.ave >= 60) {
+                return { ave: item.ave, name: item.name, result: `합격` };
+            } else {
+                return { ave: item.ave, name: item.name, result: `불합격` };
+            }
+        });
+
+        roots.forEach((item) => {
+            console.log(item);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        id : <input type="text" maxlength="10">
+        <p></p>
+        pass : <input type="password" maxlength="10">
+        <p></p>
+        <input type="button" value="추가하기" id="add">
+    </form>
+    <h3>------ input list -------</h3>
+    <hr>
+    <div id='container'></div>
+    <script>
+        const id = document.querySelector("input[type='text']");
+        const pw = document.querySelector("input[type='password']");
+        const button = document.querySelector("input[type='button']");
+
+        id.addEventListener("keyup", () => {
+            if (id.value.length >= 8) {
+                pw.focus();
+            }
+        });
+
+        pw.addEventListener("keydown", (event) => {
+            if (event.keyCode === 8 && pw.value.length == 0) {
+                id.focus();
+            }
+        });
+
+        button.addEventListener("click", () => {
+            alert(`데이터 처리 완료\nid = ${id.value}, pass = ${pw.value}`);
+            const newElem = document.createElement('p');
+            const newText = document.createTextNode(`id = ${id.value}, pass = ${pw.value}`);
+            newElem.appendChild(newText);
+
+            const container = document.getElementById('container');
+            container.appendChild(newElem);
+
+            id.value = pw.value = "";
+        });
+    </script>
+</body>
+
+</html>

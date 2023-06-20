@@ -1,0 +1,37 @@
+<!-- Exam01 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>선택자 사용 & 스타일 변경</title>
+    <script>
+        function process() {
+            let ele = document.querySelectorAll('h1');  //h1 선택자로 여러 개의 문서 객체를 배열로 가져옴
+            let message = new Array('환영합니다', '스타일을 변경했습니다', '텍스트가 변경되었습니다');
+            const tcolor = new Array('red', 'green', 'violet');
+
+            //방법1
+            ele.forEach((value, index) => {
+                value.innerHTML = message[index];
+                value.style.color = tcolor[index];
+                value.className = 'h1' + index;  //클래스 어트리뷰트 추가
+            });
+
+            //방법2
+            for (let i = 0; i < ele.length; i++) {
+                ele[i].innerHTML = message[i];
+                ele[i].style.color = tcolor[i];
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="h1">자바 스크립트</h1>
+    <h1 id="h2">문서 객체</h1>
+    <h1 id="h3">속성 변경 하기</h1>
+    <input type="button" id="change" value="h1 내용 변경" onclick="process()">
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: auto;
+        }
+
+        div {
+            height: 50vh;
+            width: 50vw;
+            font-size: 3em;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            line-height: 50vh;
+            background-color: aquamarine;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>색이 변하는 박스</div>
+    <script>
+        const $box = document.querySelector('div');
+        let color = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink'];
+        let flag = false;
+        let idx = 0;
+
+        $box.addEventListener('click', function () {
+            flag = !flag;
+            let interval = setInterval(function () {
+                if (flag) {
+                    $box.style.backgroundColor = color[idx++ % 7];
+                } else {
+                    clearInterval(interval);
+                }
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

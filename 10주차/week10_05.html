@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Account {
+            constructor(name, money, tel) {
+                this.Name = name;
+                this._money = money;
+                this.Tel = tel;
+            }
+
+            get Money() {
+                return this._money;
+            }
+
+            get Tel() {
+                return this._tel;
+            }
+
+            set Tel(tel) {
+                this._tel = tel;
+            }
+
+            deposit(money) {
+                this._money += money;
+            }
+
+            withdraw(money) {
+                if (this.Money < money) {
+                    document.write(`잔액 부족 : ${money - this.Money}<br>`);
+                    return;
+                }
+                this._money -= money;
+            }
+
+            display() {
+                document.write(`예금주 : ${this.Name}<br> 연락처 : ${this.Tel}<br> 현재 잔액 : ${this.Money}<br>`);
+            }
+        }
+
+        let acc1 = new Account('스크립트', 50000, '010-8765-1386');
+        document.write(`현재 상태 입니다 <br>`)
+        acc1.display();
+
+        document.write(`<br>50000 예금 후 상태 입니다 <br>`)
+        acc1.deposit(50000);
+        acc1.display();
+
+        document.write(`<br>1000000을 인출하려고 합니다<br>`)
+        acc1.withdraw(1000000);
+
+        document.write(`<br>변경 전 연락처 ${acc1.Tel}`);
+        acc1.Tel = '010-3456-9743';
+        document.write(`<br>변경 후 연락처 ${acc1.Tel}`);
+    </script>
+</body>
+
+</html>

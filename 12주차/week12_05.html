@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        p {
+            color: blue;
+            margin-top: 10px;
+            margin-left: 20px;
+            width: 350px;
+        }
+
+        div {
+            width: 350px;
+            height: 200px;
+            margin: 20px 20px;
+            background-image: url("image_01.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border: 1px solid darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <p> 상자위에 마우스가 있으면 배경이미지가 변하고 이미지를 클릭하면 처음의 이미지로 변경됩니다</p>
+    <script>
+        const $box = document.querySelector('div');
+        
+        $box.addEventListener('mouseover', function() {
+            $box.style.backgroundImage = "url(image_02.png)";
+        });
+
+        $box.addEventListener('mouseout', function() {
+            $box.style.backgroundImage = "url(image_03.png)";
+        });
+
+        $box.onclick = function() {
+            $box.style.backgroundImage = "url(image_01.png)";
+        }
+    </script>
+</body>
+
+</html>

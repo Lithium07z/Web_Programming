@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        hr {
+            width: 400px;
+            margin-left: 10px;
+            border: 1px solid chocolate;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(function () {
+            let stuff = []
+            let sum = 0;
+
+            while (true) {
+                let input = prompt('구입 품목과 개수를 입력하세요.\n종료하려면 종료를 입력하세요.');
+                if (input == '종료') {
+                    break;
+                } else {
+                    stuff.push(input);
+                }
+            }
+
+            stuff.forEach(elem => {
+                const [name, count] = elem.split(' ');
+                const newElem = document.createElement('li');
+                const newText = document.createTextNode(`품목 : ${name}, \u00a0\u00a0\u00a0구입개수 : ${count}`);
+                newElem.appendChild(newText);
+                sum += parseInt(count);
+
+                $('ul').append(newElem).css('list-style-type', 'none');
+            });
+
+            $('li').even().css('color', 'orange');
+            $('li').odd().css('color', 'green');
+            $('h2').not(':first').html(`총 구매 개수는 ${sum} 입니다.`);
+        });
+    </script>
+</head>
+
+<body>
+    <h2>구매내역</h2>
+    <ul></ul>
+    <hr>
+    <h2></h2>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        let idx = 1;
+        let id;
+
+        function randomSize() {
+            let size = Math.round(Math.random() * 30) + 10;
+            $('#panel').append(`<span style="font-size: ${size}px;">${idx++}</span>`);
+        }
+
+        $(function () {
+            $('#play').on('click', function () {
+                id = setInterval("randomSize()", 1000);
+            });
+
+            $('#stop').on('click', function () {
+                clearInterval(id);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <button id="play">play</button>
+        <button id="stop">stop</button>
+    </div>
+    <div id="panel">
+        <h2>난수로 생성된 숫자 추가</h2>
+    </div>
+</body>
+
+</html>
